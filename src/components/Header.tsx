@@ -38,9 +38,8 @@ const Header = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className={`text-sm font-medium transition-colors duration-200 ${
-                    isActive(item.href) ? "text-accent" : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  className={`text-sm font-medium transition-colors duration-200 ${isActive(item.href) ? "text-accent" : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   {item.label}
                 </a>
@@ -48,19 +47,18 @@ const Header = () => {
                 <Link
                   key={item.label}
                   to={item.href}
-                  className={`text-sm font-medium transition-colors duration-200 ${
-                    isActive(item.href) ? "text-accent" : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  className={`text-sm font-medium transition-colors duration-200 ${isActive(item.href) ? "text-accent" : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   {item.label}
                 </Link>
               )
             ))}
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="sm"
               onClick={() => window.open("https://github.com/techkoodaram", "_blank")}
-              className="gap-2"
+              className="gap-2 font-secondary"
             >
               <Github size={16} />
               GitHub
@@ -102,8 +100,8 @@ const Header = () => {
                   </Link>
                 )
               ))}
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="mt-2 gap-2"
                 onClick={() => window.open("https://github.com/techkoodaram", "_blank")}
               >

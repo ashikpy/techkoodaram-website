@@ -22,26 +22,16 @@ const Hero = () => {
         <div className="max-w-3xl mx-auto text-center">
 
 
-          {/* Logo */}
-          {/* <div 
-             className="mb-8 opacity-0 animate-fade-up flex justify-center"
-             style={{ animationDelay: "0.15s" }}
-          >
-            <img src="/logo.png" alt="techKoodaram Logo" className="h-auto w-auto" />
-          </div> */}
 
-          {/* Main Heading */}
-          <h1 
+          <h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 opacity-0 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-           Welcome to <span className="text-accent">techKoodaram</span>
+            Welcome to <span className="text-accent">techKoodaram</span>
           </h1>
 
-          {/* <p className="text-xl md:text-2xl font-medium text-accent mb-6 opacity-0 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Talent exists everywhere. Access doesn’t.
-          </p> */}
-          <p 
+
+          <p
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
@@ -49,30 +39,24 @@ const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div 
+          <div
             className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-up"
             style={{ animationDelay: "0.4s" }}
           >
-            <Button 
-                variant="hero" 
-                size="xl"
-                onClick={() => window.open("https://chat.whatsapp.com/JnWLnxuQAZm9pIZNUWk9Nk", "_blank")}
+            <Button
+              variant="hero"
+              size="xl"
+              onClick={() => window.open("https://chat.whatsapp.com/JnWLnxuQAZm9pIZNUWk9Nk", "_blank")}
             >
               Join via WhatsApp
               <ArrowRight size={20} />
             </Button>
           </div>
-          
+
         </div>
       </div>
 
-      {/* Scroll indicator 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in" style={{ animationDelay: "0.8s" }}>
-        <span className="text-xs text-muted-foreground">Scroll to explore</span>
-        <div className="w-5 h-8 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-1">
-          <div className="w-1 h-2 bg-muted-foreground/50 rounded-full animate-gentle-float" />
-        </div>
-      </div>*/}
+
     </section>
   );
 };
