@@ -6,24 +6,32 @@ const pillars = [
     title: "Learn",
     description: "Workshops, study groups, and mentorship for every skill level. No question is too basic.",
     color: "bg-accent/10",
+    rotate: "1deg",
+    image: "/learn.svg",
   },
   {
     icon: Share2,
     title: "Share",
     description: "Lightning talks, blog posts, and open discussions. Your unique perspective matters here.",
     color: "bg-warmGlow/20",
+    rotate: "1deg",
+    image: "/share.svg",
   },
   {
     icon: Wrench,
     title: "Build",
     description: "Hackathons, side projects, and collaborative experiments. Ideas become reality together.",
     color: "bg-sandLight",
+    rotate: "-1deg",
+    image: "/build.svg",
   },
   {
     icon: Users,
     title: "Belong",
     description: "A safe, inclusive space where you're welcomed as you are. No gatekeeping, just growth.",
     color: "bg-secondary",
+    rotate: "1deg",
+    image: "/belong.svg",
   },
 ];
 
@@ -40,30 +48,54 @@ const CommunityPillars = () => {
             Four pillars of the <span className="text-accent">koodaram</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Everything we do revolves around these core values. They guide how we gather, 
+            Everything we do revolves around these core values. They guide how we gather,
             how we grow, and how we lift each other up.
           </p>
         </div>
 
-        {/* Pillars Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        {/* Pillars Staggered Layout */}
+        <div className="flex flex-col gap-6 max-w-4xl mx-auto">
           {pillars.map((pillar, index) => (
             <div
               key={pillar.title}
-              className="group relative rounded-2xl p-6 bg-card soft-shadow hover:shadow-lg transition-all duration-300 border border-border/30 hover:border-accent/30 opacity-0 animate-fade-up"
+              className={`
+                w-full md:w-[85%]
+                ${index % 2 === 0 ? 'self-start' : 'self-end'}
+                opacity-0 animate-fade-up
+              `}
               style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
-              {/* Icon */}
-              <div className={`w-14 h-14 rounded-xl ${pillar.color} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300`}>
-                <pillar.icon className="text-accent" size={26} />
+              <div
+                className="group relative rounded-2xl p-6 bg-card soft-shadow hover:shadow-lg transition-all duration-300 border border-border/30 hover:border-accent/30"
+                style={{
+                  transform: `rotate(${pillar.rotate})`
+                }}
+              >
+                <div className="flex flex-col md:flex-row items-center gap-8">
+                  <div className="flex-1">
+                    {/* Icon */}
+                    <div className={`w-14 h-14 rounded-xl ${pillar.color} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300`}>
+                      <pillar.icon className="text-accent" size={26} />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-3xl font-semibold text-foreground mb-3">{pillar.title}</h3>
+                    <p className="text-muted-foreground text-md max-w-md leading-relaxed">{pillar.description}</p>
+                  </div>
+
+                  {/* SVG Illustration */}
+                  <div className="w-full md:w-48 flex justify-center shrink-0">
+                    <img
+                      src={pillar.image}
+                      alt={`${pillar.title} illustration`}
+                      className="w-40 h-40 object-contain opacity-90 group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+
+                {/* Decorative corner */}
+                <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-accent/10 rounded-tr-xl group-hover:border-accent/30 transition-colors duration-300" />
               </div>
-
-              {/* Content */}
-              <h3 className="text-xl font-semibold text-foreground mb-3">{pillar.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{pillar.description}</p>
-
-              {/* Decorative corner */}
-              <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-accent/10 rounded-tr-xl group-hover:border-accent/30 transition-colors duration-300" />
             </div>
           ))}
         </div>
