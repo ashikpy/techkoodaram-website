@@ -4,7 +4,7 @@ const pillars = [
   {
     icon: BookOpen,
     title: "Learn",
-    description: "Workshops, study groups, and mentorship for every skill level. No question is too basic.",
+    description: "Dive deep into technology with our hands-on workshops, peer-led study groups, and personalized mentorship. Whether you're writing your first line of code or architecting complex systems, there's always something new to discover.",
     color: "bg-accent/10",
     rotate: "1deg",
     image: "/learn.svg",
@@ -12,7 +12,7 @@ const pillars = [
   {
     icon: Share2,
     title: "Share",
-    description: "Lightning talks, blog posts, and open discussions. Your unique perspective matters here.",
+    description: "Your voice has power. Take the stage for lightning talks, publish insightful blog posts, or lead open discussions. We believe that teaching is the best way to master a subject, and your unique perspective enriches us all.",
     color: "bg-warmGlow/20",
     rotate: "1deg",
     image: "/share.svg",
@@ -20,7 +20,7 @@ const pillars = [
   {
     icon: Wrench,
     title: "Build",
-    description: "Hackathons, side projects, and collaborative experiments. Ideas become reality together.",
+    description: "Stop dreaming and start shipping. Join forces for weekend hackathons, contribute to meaningful open-source projects, and experiment with emerging tech. We provide the platform and community to turn your ideas into reality.",
     color: "bg-sandLight",
     rotate: "-1deg",
     image: "/build.svg",
@@ -28,7 +28,7 @@ const pillars = [
   {
     icon: Users,
     title: "Belong",
-    description: "A safe, inclusive space where you're welcomed as you are. No gatekeeping, just growth.",
+    description: "Find your tribe in a supportive ecosystem. We prioritize inclusivity and psychological safety, creating a space where you are valued for who you are. Here, there are no gatekeepers—only allies in your growth journey.",
     color: "bg-secondary",
     rotate: "1deg",
     image: "/belong.svg",
@@ -71,7 +71,7 @@ const CommunityPillars = () => {
                   transform: `rotate(${pillar.rotate})`
                 }}
               >
-                <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="flex flex-col md:flex-row items-center gap-4">
                   <div className="flex-1">
                     {/* Icon */}
                     <div className={`w-14 h-14 rounded-xl ${pillar.color} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300`}>
@@ -88,7 +88,7 @@ const CommunityPillars = () => {
                     <img
                       src={pillar.image}
                       alt={`${pillar.title} illustration`}
-                      className="w-40 h-40 object-contain opacity-90 group-hover:scale-110 transition-transform duration-500"
+                      className="w-56 h-56 object-contain group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
                 </div>
